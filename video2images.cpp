@@ -7,6 +7,7 @@
 #include "opencv2/videoio.hpp"
 
 typedef std::string String;
+typedef std::size_t usize;
 namespace fs = std::filesystem;
 
 int main(int argc, char* argv[]) {
@@ -46,8 +47,8 @@ int main(int argc, char* argv[]) {
     const String sep = is_windows ? "\\" : "/";
     const String file_prefix = output_dir + sep + "frame_";
 
-    unsigned long frame_idx = 0;
-    const unsigned long num_frames = static_cast<unsigned long>(cap.get(cv::CAP_PROP_FRAME_COUNT));
+    usize frame_idx = 0;
+    const usize num_frames = static_cast<usize>(cap.get(cv::CAP_PROP_FRAME_COUNT));
 
     cv::Mat frame;
     bool is_ok = true;
